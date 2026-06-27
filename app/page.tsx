@@ -6,6 +6,7 @@ import Projects from "@/components/sections/Projects";
 import Education from "@/components/sections/Education";
 import Certifications from "@/components/sections/Certifications";
 import Contact from "@/components/sections/Contact";
+import WorldClock from "@/components/WorldClock";
 
 export default function Home() {
   return (
@@ -30,6 +31,9 @@ export default function Home() {
       </section>
       <section id="certifications">
         <Certifications />
+      </section>
+      <section id="world-clock" className="bg-gradient-to-b from-transparent to-dark-secondary/30">
+        <WorldClock />
       </section>
       <section id="contact">
         <Contact />
