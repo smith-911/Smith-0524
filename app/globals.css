@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #0B1120 0%, #111827 100%);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Animated background */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #0B1120 0%, #111827 50%, #0B1120 100%);
+  z-index: -1;
+}
+
+.animated-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Glow effect */
+.glow {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.5),
+              0 0 40px rgba(59, 130, 246, 0.3);
+}
+
+.glow-sm {
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563EB;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3B82F6;
+}
+
+/* Text selection */
+::selection {
+  background: #2563EB;
+  color: #ffffff;
+}
+
+/* Utility classes */
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.btn-base {
+  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center gap-2;
+}
+
+.btn-primary {
+  @apply btn-base bg-gradient-to-r from-primary to-primary-light text-white hover:shadow-lg hover:shadow-primary/50 hover:-translate-y-1;
+}
+
+.btn-secondary {
+  @apply btn-base border border-primary text-primary hover:bg-primary/10;
+}
+
+.btn-outline {
+  @apply btn-base border border-white/20 text-white hover:bg-white/10 hover:border-white/40;
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold;
+}
+
+h1 {
+  @apply text-4xl sm:text-5xl lg:text-6xl;
+}
+
+h2 {
+  @apply text-3xl sm:text-4xl lg:text-5xl;
+}
+
+h3 {
+  @apply text-2xl sm:text-3xl;
+}
+
+/* Link styles */
+a {
+  @apply transition-colors duration-300;
+}
+
+a:hover {
+  @apply text-primary;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-dark;
+}
